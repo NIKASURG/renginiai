@@ -10,7 +10,7 @@ function Login(){
         const slaptazodis = form.elements.slaptazodis.value;
         signInWithEmailAndPassword(auth, elPastas, slaptazodis)
             .then(() => {
-                alert('Prisijungta sėkmingai!');
+                // alert('Prisijungta sėkmingai!');
                 form.reset();
             })
             .catch((error) => {
