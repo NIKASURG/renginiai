@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Switch, useRoutes } from 'react-router-dom';
 import Register from './komponentai/register';
@@ -48,13 +47,16 @@ function App() {
     ) : (
       <button style={{ backgroundColor: 'red' }} onClick={() => { window.location.href = "/login"; }}>NEPRISIJUNKTA</button>
     )}
-    {
-        dalys.map((dalys) => {
-          return (
-            <button onClick={() => { window.location.href = dalys.path; }}>{dalys.path}</button>
-          );
-        })
-      }
+   {
+  dalys.map((dalys) => {
+    return (
+      <button key={dalys.path} onClick={() => { window.location.href = dalys.path; }}>
+        {dalys.path}
+      </button>
+    );
+  })
+}
+
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
